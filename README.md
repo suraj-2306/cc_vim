@@ -1,4 +1,4 @@
-## cc_vim
+# cc_vim
 This is a vim plugin to help you run a cpp file with a keystroke. It's designed to take input from a input.txt and put the output in output.txt in a local folder.
 This is especially helpful for competitive coding.(cpp ofcourse)
 
