@@ -22,10 +22,9 @@ This is especially helpful for competitive coding.(cpp ofcourse)
     `autocmd VimEnter *.cpp :vsp input.txt |vertical resize 40| split output.txt`
     to your .local.vimrc or any other Plugin vimrc you have used.
     Or
-  b. If you're confortable working with buffers, ignore the above step
-  
-3.a. Open a file `vim example.vim` in your local directory.
-     Or
-  b. If you're not using 2.a then use `vim example.cpp output.txt input.txt` to open the .txt files as buffers.
+    b. If you're confortable working with buffers, ignore the above step
+3. a. Open a file `vim example.vim` in your local directory.
+   Or
+   b. If you're not using 2.a then use `vim example.cpp output.txt input.txt` to open the .txt files as buffers.
   
 4. Press <F-9> key to trigger the plugin.
