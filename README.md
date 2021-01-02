@@ -18,7 +18,7 @@ This is especially helpful for competitive coding.(cpp ofcourse)
 ## Installation
 1. Using Plugin Manager
    - Recommended to use [Vundle](https://github.com/VundleVim/Vundle.vim)
-   - add 'PLugin 'suraj-2306/cc_vim'' to your vimrc
+   - add ' PLugin 'suraj-2306/cc_vim' ' to your vimrc
 2. Manual Installation
    - Download the zip file and extract it to the ~/.vim directory.
    
