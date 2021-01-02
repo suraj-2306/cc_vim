@@ -33,4 +33,4 @@ This is especially helpful for competitive coding.(cpp ofcourse)
    - a. Open a file `vim example.vim` in your local directory.
    - b. If you're not using 2.a then use `vim example.cpp output.txt input.txt` to open the .txt files as buffers.
   
-4. Press <F-9> key to trigger the plugin.
+4. Press F9 key to trigger the plugin.
