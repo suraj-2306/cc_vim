@@ -34,3 +34,6 @@ This is especially helpful for competitive coding.
    - b. If you're not using 2.a then use `vim example.cpp output.txt input.txt` to open the .txt files as buffers.
   
 4. Press F9 key to trigger the plugin. It automatically compiles your example.cpp file and creates a example.out as an executable. This also run the .out file.
+
+The final thing must look similar to this. 
+![plot](https://pasteboard.co/JIqx9F2.png)
