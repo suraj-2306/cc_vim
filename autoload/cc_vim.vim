@@ -55,20 +55,21 @@ endfunction
 function! cc_vim#Save_all(dir_path,file_name_list)
 	let l:length=len(a:file_name_list)
 	let l:i=1
-	while l:i<=l:length
-		silent exe 'w! '.a:dir_path.'/'.a:file_name_list[l:i-1]
-		let l:i+=1
-	endwhile
+	execute 'wa'
+	"while l:i<=l:length
+		"silent exe 'w! '.a:dir_path.'/'.a:file_name_list[l:i-1]
+		"let l:i+=1
+	"endwhile
 endfunction
 
-"function! cc_vim#Map_run(cpp_file_name,file_name_list,dir_path)
-	"call cc_vim#Save_all(a:dir_path,a:file_name_list)
-	"call cc_vim#Make_create(cc_vim#Find_path(),a:dir_path)
-	"let l:path_to_input=a:dir_path.'/input.txt'
-	"call cc_vim#Make_run(a:cpp_file_name,a:dir_path,cc_vim#Checkinputtxt(l:path_to_input))
-"endfunction
+function! cc_vim#Map_run(cpp_file_name,file_name_list,dir_path)
+	call cc_vim#Save_all(a:dir_path,a:file_name_list)
+	call cc_vim#Make_create(cc_vim#Find_path(),a:dir_path)
+	let l:path_to_input=a:dir_path.'/input.txt'
+	call cc_vim#Make_run(a:cpp_file_name,a:dir_path,cc_vim#Checkinputtxt(l:path_to_input))
+endfunction
 
 function! cc_vim#Final_run()
-	"let l:cpp_file_name=cc_vim#Buffer_identify(cc_vim#List_buffer(),'cpp')
-	"call cc_vim#Map_run(l:cpp_file_name[0],cc_vim#List_buffer(),expand('%:p:h'))
+	let l:cpp_file_name=cc_vim#Buffer_identify(cc_vim#List_buffer(),'cpp')
+	call cc_vim#Map_run(l:cpp_file_name[0],cc_vim#List_buffer(),expand('%:p:h'))
 endfunction
