@@ -5,7 +5,7 @@ function! cc_vim#Make_run(file_name,dir_path,if_input_ex)
 	else
 		let l:target='target_output_only'
 	endif
-	silent execute 'make -s -f '.g:make_file_name.' '.target.' TARGET='.a:file_name.' -C '.a:dir_path
+	silent execute 'make -s -f '.g:make_file_name.' '.target.' TARGET='.a:file_name.' -C '.a:dir_path.' &'
 endfunction
 
 function! cc_vim#Make_create(root_path,dir_path)
