@@ -5,7 +5,7 @@ function! cc_vim#Make_run(file_name,dir_path,if_input_ex)
 	else
 		let l:target='target_output_only'
 	endif
-	execute 'make -s -f '.g:make_file_name.' '.target.' TARGET='.a:file_name.' -C '.a:dir_path
+	silent execute 'make -s -f '.g:make_file_name.' '.target.' TARGET='.a:file_name.' -C '.a:dir_path
 endfunction
 
 function! cc_vim#Make_create(root_path,dir_path)
@@ -61,14 +61,14 @@ function! cc_vim#Save_all(dir_path,file_name_list)
 	endwhile
 endfunction
 
-function! cc_vim#Map_run(cpp_file_name,file_name_list,dir_path)
-	call cc_vim#Save_all(a:dir_path,a:file_name_list)
-	call cc_vim#Make_create(cc_vim#Find_path(),a:dir_path)
-	let l:path_to_input=a:dir_path.'/input.txt'
-	call cc_vim#Make_run(a:cpp_file_name,a:dir_path,cc_vim#Checkinputtxt(l:path_to_input))
-endfunction
+"function! cc_vim#Map_run(cpp_file_name,file_name_list,dir_path)
+	"call cc_vim#Save_all(a:dir_path,a:file_name_list)
+	"call cc_vim#Make_create(cc_vim#Find_path(),a:dir_path)
+	"let l:path_to_input=a:dir_path.'/input.txt'
+	"call cc_vim#Make_run(a:cpp_file_name,a:dir_path,cc_vim#Checkinputtxt(l:path_to_input))
+"endfunction
 
 function! cc_vim#Final_run()
-	let l:cpp_file_name=cc_vim#Buffer_identify(cc_vim#List_buffer(),'cpp')
-	call cc_vim#Map_run(l:cpp_file_name[0],cc_vim#List_buffer(),expand('%:p:h'))
+	"let l:cpp_file_name=cc_vim#Buffer_identify(cc_vim#List_buffer(),'cpp')
+	"call cc_vim#Map_run(l:cpp_file_name[0],cc_vim#List_buffer(),expand('%:p:h'))
 endfunction
