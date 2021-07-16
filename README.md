@@ -15,7 +15,13 @@ This is especially helpful for competitive coding.
 1. [vim-localrc](https://github.com/thinca/vim-localrc).
    Any local-vimrc tool can be used. However, you can skip the above step if you are not acquainted with working with vim Plugins.
 2. rsync
-   Install using `sudo apt-get install rsync`
+   Install using `sudo apt-get install rsync` for debian based. Look up the command for your distro.
+3. [vim-autoread](https://github.com/djoshea/vim-autoread)
+   For enabling autoread for all tabs in the buffer.
+
+### Optional dependency
+4. [vim-easy-align](https://github.com/fcpg/vim-altscreen)
+   This outputs all the unecessary output commands in a virtual shell, saving the main screen from clutter.
 
 ## Installation
 1. Using Plugin Manager
