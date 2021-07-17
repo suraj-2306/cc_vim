@@ -36,7 +36,7 @@ This is especially helpful for competitive coding.
    - Add the following command `autocmd VimEnter *.cpp :vsp input.txt |vertical resize 40| split output.txt` to your .local.vimrc or any other local vimrc Plugin you have used.
    - If you are comfortable working with buffers, ignore the above step
 3. If your are not using a local vimrc plugin,
-   - Add the following lines to your .vimrc `autocmd VimEnter *.cpp :vsp input.txt |vertical resize 40| split output.txt`. This basically splits your screen into 3 sections to accomadate output.txt, input.txt and the .cpp file buffers. The only disadvantage by adding this in the .vimrc folder over a local .vimrc is that, every time your're opening a .cpp file you will have the [this](https://pasteboard.co/JIqx9F2.png) congiguration
+   - Add the following lines to your .vimrc `autocmd VimEnter *.cpp :vsp input.txt |vertical resize 40| split output.txt`. This basically splits your screen into 3 sections to accomadate output.txt, input.txt and the .cpp file buffers. The only disadvantage by adding this in the .vimrc folder over a local .vimrc is that, every time your're opening a .cpp file you will have the [this](Preview.jpg) congiguration
 
 
 4. Opening format
