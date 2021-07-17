@@ -64,23 +64,11 @@ function! cc_vim#Buffer_identify(Buffer_list,Identifier)
 	return l:file_name
 endfunction
 
-function! cc_vim#Save_all(dir_path,file_name_list)
-	let l:length=len(a:file_name_list)
-	let l:i=1
-	"while l:i<=l:length
-	"echo expand(a:file_name_list[l:i-1])
-	"silent exe 'checktime '.a:dir_path.'/'.a:file_name_list[l:i-1]
-	"silent exe 'edit'.a:dir_path.'/'.a:file_name_list[l:i-1]
-	"let l:i+=1
-	"endwhile
-endfunction
-
 function! cc_vim#Map_run(cpp_file_name,file_name_list,dir_path)
 	execute 'wa'
 	call cc_vim#Make_create(cc_vim#Find_path(),a:dir_path)
 	let l:path_to_input=a:dir_path.'/input.txt'
 	call cc_vim#Make_run(a:cpp_file_name,a:dir_path,cc_vim#Checkinputtxt(l:path_to_input))
-	"call feedkeys("<C-l>")
 endfunction
 
 function! cc_vim#Final_run()
