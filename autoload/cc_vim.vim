@@ -1,4 +1,3 @@
-
 function! cc_vim#Make_run(file_name,dir_path,if_input_ex)
 	let l:target='target'
 	if a:if_input_ex
@@ -6,11 +5,22 @@ function! cc_vim#Make_run(file_name,dir_path,if_input_ex)
 	else
 		let l:target='target_output_only'
 	endif
-	silent execute '!make -s -f '.g:make_file_name.' '.target.' TARGET='.a:file_name.' -C '.a:dir_path.' &'
+	let l:output=system('make -s -f '.g:make_file_name.' '.l:target.' TARGET='.a:file_name.' -C '.a:dir_path)
+	let l:errormsg=system('head -n 1 errormsg')
+	let l:expected_errormsg='124'
+	if stridx(l:errormsg,l:expected_errormsg) >=0
+		echohl WarningMsg
+		echom "Time limit exceeded Execution Stopped"
+		echohl None
+	else
+		let	l:target = 'target_output'
+		let l:output=system('make -s -f '.g:make_file_name.' '.l:target.' TARGET='.a:file_name.' -C '.a:dir_path)
+	endif
+
 endfunction
 
 function! cc_vim#Make_create(root_path,dir_path)
-	silent execute '!rsync -t '.a:root_path.g:make_file_name.' '.a:dir_path.'/'.g:make_file_name
+	let l:output=system('rsync -t '.a:root_path.g:make_file_name.' '.a:dir_path.'/'.g:make_file_name)
 
 endfunction
 
@@ -57,12 +67,12 @@ endfunction
 function! cc_vim#Save_all(dir_path,file_name_list)
 	let l:length=len(a:file_name_list)
 	let l:i=1
-	while l:i<=l:length
-		echo expand(a:file_name_list[l:i-1])
-		silent exe 'checktime '.a:dir_path.'/'.a:file_name_list[l:i-1]
-		silent exe 'edit'.a:dir_path.'/'.a:file_name_list[l:i-1]
-		let l:i+=1
-	endwhile
+	"while l:i<=l:length
+	"echo expand(a:file_name_list[l:i-1])
+	"silent exe 'checktime '.a:dir_path.'/'.a:file_name_list[l:i-1]
+	"silent exe 'edit'.a:dir_path.'/'.a:file_name_list[l:i-1]
+	"let l:i+=1
+	"endwhile
 endfunction
 
 function! cc_vim#Map_run(cpp_file_name,file_name_list,dir_path)
@@ -70,7 +80,7 @@ function! cc_vim#Map_run(cpp_file_name,file_name_list,dir_path)
 	call cc_vim#Make_create(cc_vim#Find_path(),a:dir_path)
 	let l:path_to_input=a:dir_path.'/input.txt'
 	call cc_vim#Make_run(a:cpp_file_name,a:dir_path,cc_vim#Checkinputtxt(l:path_to_input))
-	call feedkeys("<C-l>")
+	"call feedkeys("<C-l>")
 endfunction
 
 function! cc_vim#Final_run()
