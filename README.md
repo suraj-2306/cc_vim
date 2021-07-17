@@ -40,7 +40,7 @@ This is especially helpful for competitive coding.
 
 
 4. Opening format
-   - Open a terminal window, navigate to your directory and type `vim example.cpp`. [This setup](https://pasteboard.co/JIqx9F2.png) must show up
+   - Open a terminal window, navigate to your directory and type `vim example.cpp`. [This setup](Preview.jpg) must show up
    - If you're not using 2.a then use `vim example.cpp output.txt input.txt` to open the files as buffers.
   
 5. Press F9 key to trigger the plugin. It automatically compiles your example.cpp file and creates a example.out as an executable. This also run the .out file.
